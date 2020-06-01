@@ -1,0 +1,23 @@
+@mixin safe-padding-bottom($value: 0) {
+  padding-bottom: calc(0px + #{$value});
+  padding-bottom: calc(constant(safe-area-inset-bottom) + #{$value});
+  padding-bottom: calc(env(safe-area-inset-bottom) + #{$value});
+}
+
+@mixin safe-bottom($value: 0) {
+  bottom: calc(0px + #{$value});
+  bottom: calc(constant(safe-area-inset-bottom) + #{$value});
+  bottom: calc(env(safe-area-inset-bottom) + #{$value});
+}
+
+@mixin safe-height($value: 0) {
+  height: calc(100vh - (0px + #{$value}));
+  height: calc(100vh - (constant(safe-area-inset-bottom) + #{$value}));
+  height: calc(100vh - (env(safe-area-inset-bottom) + #{$value}));
+}
+
+@mixin safe-min-height($value: 0) {
+  min-height: calc(100vh - (0px + #{$value}));
+  min-height: calc(100vh - (constant(safe-area-inset-bottom) + #{$value}));
+  min-height: calc(100vh - (env(safe-area-inset-bottom) + #{$value}));
+}
