@@ -6,7 +6,8 @@
  */
 
 // 环境配置
-const env = require(`./${process.env.NODE_ENV}`)
+const nodeEnv = process.env.NODE_ENV || 'production'
+const env = require(`./${nodeEnv}`)
 
 // 全局配置
 const global = {
@@ -15,4 +16,3 @@ const global = {
 }
 
 module.exports = Object.assign(env, global)
-

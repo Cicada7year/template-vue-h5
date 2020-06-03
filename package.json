@@ -6,18 +6,19 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev": "cross-env NODE_ENV=dev yarn serve",
-    "dev:uat": "cross-env NODE_ENV=uat yarn serve",
-    "dev:prod": "cross-env NODE_ENV=prod yarn serve",
-    "build:dev": "cross-env NODE_ENV=dev yarn build",
-    "build:uat": "cross-env NODE_ENV=uat yarn build",
-    "build:pord": "cross-env NODE_ENV=prod yarn build"
+    "dev": "cross-env NODE_ENV=development yarn serve",
+    "dev:sit": "cross-env NODE_ENV=staging yarn serve",
+    "dev:prod": "cross-env NODE_ENV=production yarn serve",
+    "build:dev": "cross-env NODE_ENV=development yarn build",
+    "build:sit": "cross-env NODE_ENV=staging yarn build",
+    "build:pord": "cross-env NODE_ENV=production yarn build"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
     "js-cookie": "^2.2.1",
     "lodash": "^4.17.15",
+    "vconsole": "^3.3.4",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
@@ -39,6 +40,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "lib-flexible": "^0.3.2",
     "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
     "px2rem-loader": "^0.1.9",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"

@@ -3,7 +3,7 @@
  * @Date: 2020-06-01 13:06:49
  * @Autor: Popper_Li
  * @LastEditors: Popper_Li
- * @LastEditTime: 2020-06-01 14:40:34
+ * @LastEditTime: 2020-06-02 17:17:33
  */
 
 const path = require('path')
@@ -31,6 +31,10 @@ module.exports = {
       }
     }
   },
+  /**
+   * 更改webpack上下文配置文件
+   * 修改说明可参考命令行 vue inspect > outWebpack.js里的参数
+   */
   chainWebpack: config => {
     /**
      * 别名设置
@@ -51,6 +55,18 @@ module.exports = {
         // 75为750px设计稿 350的直接写35就行
         remUnit: 75,
         remPrecision: 8
+      })
+      .end()
+
+    /**
+     * 全局scss变量
+     */
+    config.module
+      .rule('scss')
+      .oneOf('vue')
+      .use('sass-loader')
+      .options({
+        prependData: `@import "@/assets/scss/index.scss";`
       })
       .end()
   }
