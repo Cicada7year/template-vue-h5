@@ -11,8 +11,9 @@ const env = require(`./${nodeEnv}`)
 
 // 全局配置
 const global = {
-  // 脚手架版本号
-  version: '0.0.1'
+  // 项目版本号
+  version: '0.0.1',
+  NODE_ENV: nodeEnv
 }
 
 module.exports = Object.assign(env, global)

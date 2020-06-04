@@ -3,7 +3,7 @@
  * @Date: 2020-06-01 13:06:49
  * @Autor: Popper_Li
  * @LastEditors: Popper_Li
- * @LastEditTime: 2020-06-02 17:17:33
+ * @LastEditTime: 2020-06-04 17:51:25
  */
 
 const path = require('path')
@@ -25,7 +25,7 @@ module.exports = {
         target: env.apiBase,
         changeOrigin: true,
         pathRewrite: {
-          // key为前缀，以此前缀替换value的指定字符
+          // key为前缀，以此前缀替换value的指定字符,如果有多字段请自行替换
           '^/api': '/api/xxx'
         }
       }
@@ -41,7 +41,9 @@ module.exports = {
      */
     config.resolve.alias
       .set('@c', resove('src/components'))
+      .set('@const', resove('src/constant'))
       .set('@u', resove('src/utils'))
+      .set('@Env', resove('env'))
     /**
      * px2rem设置
      */

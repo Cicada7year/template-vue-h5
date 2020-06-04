@@ -3,7 +3,7 @@
  * @Date: 2020-06-01 14:39:38
  * @Autor: Popper_Li
  * @LastEditors: Popper_Li
- * @LastEditTime: 2020-06-03 11:26:54
+ * @LastEditTime: 2020-06-04 17:25:50
  */
 module.exports = {
   root: true,
@@ -25,6 +25,7 @@ module.exports = {
     'space-before-function-paren': 0,
     'semi': 0,
     'quotes': 0,
+    'eol-last': 0,
     'no-console': 'off',
     'no-debugger': 'off',
     'no-trailing-spaces': 'off',
