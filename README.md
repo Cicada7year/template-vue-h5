@@ -1,5 +1,5 @@
 <!--
- * @Description: 
+ * @Description: 项目文档
  * @Date: 2020-06-01 14:36:28
  * @Autor: Popper_Li
  * @LastEditors: Popper_Li
@@ -37,7 +37,7 @@ vue h5 模板
 │   │   └── validate.js                         // 数据校验工具库
 │   └── views                                   // 视图目录
 ├── .browserslistrc                             // 
-├── .eslintrc.js                                // 代码检查配置
+├── .eslintrc.js                                // 代码检查配置 [文档](./doc/eslintrc.md)
 ├── babel.config.js                             // babel配置文件
 ├── package.json                                // 项目依赖配置
 ├── README.md                                   // 文档

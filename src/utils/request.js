@@ -3,13 +3,13 @@
  * @Date: 2020-06-04 17:35:40
  * @Autor: Popper_Li
  * @LastEditors: Popper_Li
- * @LastEditTime: 2020-06-04 18:13:48
+ * @LastEditTime: 2020-06-08 10:49:45
  */
 import axios from 'axios'
 import Env from '@Env'
 import { getLocalStore } from './data'
 import { isDev } from './sys'
-import CONFIG from '@const/config'
+import setting from '@const/setting'
 
 const http = axios.create({
   // 如果是开发环境的话默认开启代理
@@ -30,7 +30,7 @@ http.interceptors.request.use(_config => {
   /**
    * 装自动token
    */
-  _config.headers[CONFIG.tokenName] = getLocalStore(CONFIG.tokenName)
+  _config.headers[setting.tokenName] = getLocalStore(setting.tokenName)
 
   /**
    * 如果是post并且没有指定content-type
