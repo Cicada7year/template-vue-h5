@@ -1,3 +1,4 @@
+@charset 'UTF-8';
 @mixin safe-padding-bottom($value: 0) {
   padding-bottom: calc(0px + #{$value});
   padding-bottom: calc(constant(safe-area-inset-bottom) + #{$value});

@@ -20,25 +20,23 @@ import Env from '@Env'
  * 适用跨页面传值、临时存储某些数据等使用场景
  * 注：存到内存的数据，非持久化存储。
  */
-
-let __temp = {}
-
-const get = (key) => {
-  if (!key) return ''
-  return __temp[key] ? JSON.parse(__temp[key]) : null
+class Store {
+  constructor() { this.clear() }
+  // get数据异步方法
+  async get(key) { if (!key) return ''; return this._state[key] ? JSON.parse(this._state[key]) : null }
+  // get数据同步方法
+  getSync(key) { if (!key) return ''; return this._state[key] ? JSON.parse(this._state[key]) : null }
+  // set数据异步方法
+  async set(key, value) { this._state[key] = JSON.stringify(value) }
+  // set数据同步方法
+  setSync(key, value) { this._state[key] = JSON.stringify(value) }
+  // 删除某个数据
+  remove(key) { delete this._state[key] }
+  // 清空数据
+  clear() { this._state = {} }
 }
 
-const set = async (key, value) => {
-  __temp[key] = JSON.stringify(value)
-}
-
-const remove = (key) => {
-  delete __temp[key]
-}
-
-const clear = (key) => {
-  __temp = {}
-}
+const store = new Store()
 
 /**
  * 判断是否把临时数据存到持久化存储里
@@ -49,28 +47,30 @@ const temp2Local = Env.openTempData2Local
 // 临时变量前缀，仅在开发环境使用
 const KEY = 'TEMP'
 /**
- * 获取数据
+ * 获取数据，下面的是同步版
  * @param {String} key 数据名
  */
-export const getTempData = (key) => temp2Local ? getLocalStore(`${KEY}_${key}`) : get(key)
+export const getTempData = (key) => temp2Local ? getLocalStore(`${KEY}_${key}`) : store.get(key)
+export const getTempDataSync = (key) => temp2Local ? getLocalStore(`${KEY}_${key}`) : store.getSync(key)
 
 /**
- * 设置某个数据
+ * 设置某个数据，下面的是同步版
  * @param {String} key 数据名
  * @param {Object} value 值
  */
-export const setTempData = (key, value) => temp2Local ? setCookie(`${KEY}_${key}`, value) : set(key, value)
+export const setTempData = (key, value) => temp2Local ? setCookie(`${KEY}_${key}`, value) : store.set(key, value)
+export const setTempDataSync = (key, value) => temp2Local ? setCookie(`${KEY}_${key}`, value) : store.setSync(key, value)
 
 /**
  * 删除某个数据
  * @param {String} key 数据名
  */
-export const removeTempData = (key) => temp2Local ? removeLocalStore(`${KEY}_${key}`) : remove(key)
+export const removeTempData = (key) => temp2Local ? removeLocalStore(`${KEY}_${key}`) : store.remove(key)
 
 /**
  * 清空数据
  */
-export const clearTempData = clear
+export const clearTempData = store.clear
 
 /**
  * 存Cookie

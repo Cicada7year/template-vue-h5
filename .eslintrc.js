@@ -25,11 +25,12 @@ module.exports = {
     'semi': 0,                                    // 语句可以不需要分号结尾
     'quotes': 0,                                  // 引号风格
     'eol-last': 0,                                // 文件以单一的换行符结束
-    'no-console': 0,                          // 禁止使用console
-    'no-debugger': 0,                         // 禁止使用debugger
-    'no-trailing-spaces': 0,                  // 一行最后不允许有空格
-    'vue/no-unused-components': 'warn',           // 没有使用的组件警告
-    'vue/no-unused-vars': 'warn',                 // 没有使用的变量警告
+    'no-console': 0,                              // 禁止使用console
+    'no-debugger': 0,                             // 禁止使用debugger
+    'no-unused-vars': 1,                          // 没有使用的变量警告
+    'no-trailing-spaces': 0,                      // 一行最后不允许有空格
+    'vue/no-unused-components': 1,                // 没有使用的组件警告
+    'vue/no-unused-vars': 1,                      // 没有使用的变量警告
     'space-before-function-paren': 0,             // 函数定义时括号前面要不要有空格
   },
 

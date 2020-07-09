@@ -1,3 +1,4 @@
+@charset 'UTF-8';
 @mixin clearfix {
   &:after {
     content: "";
@@ -10,4 +11,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+// 文本截断
+@mixin elip ($line:1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
 }
