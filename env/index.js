@@ -13,6 +13,8 @@ const env = require(`./${nodeEnv}`)
 const global = {
   // 项目版本号
   version: '0.0.1',
+  // px2Rem画稿配置，单位为画稿宽度
+  remUnit: 750,
   NODE_ENV: nodeEnv
 }
 

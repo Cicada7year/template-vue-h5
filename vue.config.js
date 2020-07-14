@@ -47,18 +47,20 @@ module.exports = {
     /**
      * px2rem设置
      */
-    config.module
-      .rule('scss')
-      .oneOf('vue')
-      .use('px2rem-loader')
-      .loader('px2rem-loader')
-      .before('postcss-loader')
-      .options({
-        // 75为750px设计稿 350的直接写35就行
-        remUnit: 75,
-        remPrecision: 8
-      })
-      .end()
+    if (env.remUnit) {
+      config.module
+        .rule('scss')
+        .oneOf('vue')
+        .use('px2rem-loader')
+        .loader('px2rem-loader')
+        .before('postcss-loader')
+        .options({
+          remUnit: env.remUnit / 10,
+          // 转rem后保留几位小数
+          remPrecision: 8
+        })
+        .end()
+    }
 
     /**
      * 全局scss变量

@@ -5,6 +5,7 @@
  * @LastEditors: Popper_Li
  * @LastEditTime: 2020-06-03 13:51:39
  */
+import Env from '@Env'
 
 /**
  * 格式化时间
@@ -12,8 +13,8 @@
  * @param {String} format 格式 'Y/D/M h:m:s'
  * @return {String} 格式化后时间 '2020/02/02 12:12:00'
  */
-export function formatTime(number, format) {
-  function formatNumber(n) {
+export const formatTime = (number, format) => {
+  const formatNumber = (n) => {
     n = n.toString()
     return n[1] ? n : '0' + n
   }
@@ -42,7 +43,7 @@ export function formatTime(number, format) {
  * @param {Number} datetime 时间戳
  * @param {Boolean} simple 
  */
-export function formatDate(datetime, simple = false) {
+export const formatDate = (datetime, simple = false) => {
   const tempDate = (new Date()).getTime()
   const result = stringifyDate(datetime, simple)
   const thatDay = result.thatDay
@@ -66,7 +67,7 @@ export function formatDate(datetime, simple = false) {
  * @param {Date} datetime 时间戳
  * @param {Boolean} simple 
  */
-export function stringifyDate(datetime, simple = false) {
+export const stringifyDate = (datetime, simple = false) => {
   // let weekMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
   const weekMap = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
   datetime = new Date(datetime)
@@ -110,7 +111,7 @@ export function stringifyDate(datetime, simple = false) {
  * @param {String} start 开始时间
  * @param {String} end 结束时间
  */
-export function diffTime(start, end) {
+export const diffTime = (start, end) => {
   const startTime = new Date(Date.parse(start.replace(/-/g, '/'))).getTime();
   const endTime = new Date(Date.parse(end.replace(/-/g, '/'))).getTime();
   //  时间差的毫秒数
@@ -141,7 +142,7 @@ export function diffTime(start, end) {
  * @param {Number} time 时间戳
  * @param {Number} num 加减分钟
  */
-export function addTime(time, num) {
+export const addTime = (time, num) => {
   const t = new Date(time)
   t.setTime(time + 1000 * 60 * num)
   return t
@@ -153,7 +154,7 @@ export function addTime(time, num) {
  * @param {Number} decimal 小数位，默认保留后两位
  * @param {Boolean} thousands 是否开启千分位
  */
-export function formatProce(num, decimal = 2, thousands = true) {
+export const formatProce = (num, decimal = 2, thousands = true) => {
   let price = Number(num).toFixed(decimal)
   if (thousands) price = price.replace(/(\d)(?=(\d{3})+\.)/g, '$1,')
   return price
@@ -163,7 +164,7 @@ export function formatProce(num, decimal = 2, thousands = true) {
  * 序列化对象为URL参数
  * @param {Any} obj 需要序列化的参数
  */
-export function stringifyParams2Url(obj) {
+export const stringifyParams2Url = (obj) => {
   if (!obj) return ''
   const stringify = (param, key) => {
     let str = ''
@@ -185,7 +186,7 @@ export function stringifyParams2Url(obj) {
  * 序列化字符串为对象
  * @param {String} str url参数
  */
-export function parseUrl2Param(str) {
+export const parseUrl2Param = (str) => {
   if (!str) return {}
   const arr = str.replace(/\?/g, '').split('&')
   const param = {}
@@ -194,4 +195,12 @@ export function parseUrl2Param(str) {
     param[s[0]] = s[1]
   })
   return param
+}
+
+/**
+ * px转换成rem
+ * @param {Number} num 需要转换的单位
+ */
+export const px2Rem = (num = 0) => {
+  return `${num / Env.remUnit * 10}rem`
 }
