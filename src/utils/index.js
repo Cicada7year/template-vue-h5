@@ -6,6 +6,7 @@
  * @LastEditTime: 2020-06-04 18:04:18
  */
 import * as data from './data'
+import * as debug from './debug'
 import * as format from './format'
 import * as request from './request'
 import * as tool from './tool'
@@ -15,6 +16,8 @@ import * as validate from './validate'
 export default {
   // 数据相关
   ...data,
+  // 调试相关
+  ...debug,
   // 格式化数据
   ...format,
   // 请求封装

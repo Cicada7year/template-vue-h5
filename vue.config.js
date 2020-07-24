@@ -10,6 +10,39 @@ const path = require('path')
 const env = require('./env')
 const resove = dir => path.join(__dirname, dir)
 
+const proxy = {}
+/**
+ * 如果只是单条的接口配置就在这里写
+ * 多条的根据env里配置的生成
+ */
+if (typeof env.apiBase === 'string') {
+  proxy['/api'] = {
+    target: env.apiBase,
+    changeOrigin: true,
+    pathRewrite: {
+      // key为前缀，以此前缀替换value的指定字符,如果有多字段请自行替换
+      '^/api': '/api/xxx'
+    }
+  }
+} else if (typeof env.apiBase === 'object') {
+  for (const key in env.apiBase) {
+    const element = env.apiBase[key];
+    if (element.proxy && typeof element.proxy === 'object') {
+      for (const api in element.proxy) {
+        const item = element.proxy[api];
+        proxy[api] = {
+          ...item,
+          target: element.url
+        }
+      }
+    }
+  }
+} else {
+  throw new Error('baseURL is undefined!')
+}
+
+console.log('proxy', proxy);
+
 module.exports = {
   publicPath: env.publicPath,
   /**
@@ -20,16 +53,7 @@ module.exports = {
     port: 9527,
     // api代理，防止开发阶段联调出现跨域情况
     // 文档地址：https://cli.vuejs.org/zh/config/#devserver-proxy
-    proxy: {
-      '/api': {
-        target: env.apiBase,
-        changeOrigin: true,
-        pathRewrite: {
-          // key为前缀，以此前缀替换value的指定字符,如果有多字段请自行替换
-          '^/api': '/api/xxx'
-        }
-      }
-    }
+    proxy
   },
   /**
    * 更改webpack上下文配置文件
