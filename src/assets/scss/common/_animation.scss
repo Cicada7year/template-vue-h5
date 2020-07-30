@@ -1,3 +1,5 @@
+@import '../vars/index';
+
 @keyframes li-rotate {
   from {
     transform: rotate(0deg);
@@ -26,4 +28,13 @@
   to {
     opacity: 0;
   }
+}
+
+
+.li-fade-enter-active {
+  animation: $animation-duration-base li-fade-in both $animation-timing-function-enter;
+}
+
+.li-fade-leave-active {
+  animation: $animation-duration-base li-fade-out both $animation-timing-function-leave;
 }

@@ -17,17 +17,17 @@ import setting from "@const/setting"
 export const debounce = (f, wait = 100, firstRun = false) => {
   let timer = null
   let flag = true
-  return (...args) => {
+  return function () {
     clearTimeout(timer)
     if (firstRun && flag) {
-      f(...args)
+      f.apply(this, ...arguments)
       flag = false
     }
     timer = setTimeout(() => {
       if (firstRun) {
         flag = true
       } else {
-        f(...args)
+        f.apply(this, ...arguments)
       }
     }, wait);
   }
@@ -42,19 +42,19 @@ export const debounce = (f, wait = 100, firstRun = false) => {
 export const throttle = (f, wait = 100, firstRun = false) => {
   let timer = null
   let flag = true
-  return (...args) => {
+  return function () {
     if (timer) return
     if (firstRun && flag) {
-      f(...args)
+      f.apply(this, ...arguments)
       flag = false
     }
     timer = setTimeout(() => {
       if (firstRun) {
         flag = true
       } else {
-        f(...args)
-        timer = null
+        f.apply(this, ...arguments)
       }
+      timer = null
     }, wait);
   }
 }

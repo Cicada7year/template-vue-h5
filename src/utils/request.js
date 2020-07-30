@@ -58,12 +58,12 @@ const serviceInterceptorAssembly = (
      */
     return Promise.reject(err)
   }]) => {
-  if (Array.isArray(request)) {
-    error(`TypeError: request is not Array`)
+  if (!Array.isArray(request)) {
+    error(new Error(`TypeError: request is not Array`).stack)
   }
 
-  if (Array.isArray(response)) {
-    error(`TypeError: response is not Array`)
+  if (!Array.isArray(response)) {
+    error(new Error(`TypeError: response is not Array`).stack)
   }
 
   /**
