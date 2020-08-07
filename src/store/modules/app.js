@@ -1,9 +1,6 @@
 /*
  * @Description: 项目设置
- * @Date: 2020-06-08 11:05:42
  * @Autor: Popper_Li
- * @LastEditors: Popper_Li
- * @LastEditTime: 2020-06-08 11:55:09
  */
 import _setting from "@const/setting";
 

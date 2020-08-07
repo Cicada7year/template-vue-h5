@@ -1,9 +1,6 @@
 /*
  * @Description: 系统环境
- * @Date: 2020-06-04 16:01:08
  * @Autor: Popper_Li
- * @LastEditors: Popper_Li
- * @LastEditTime: 2020-06-04 17:42:49
  */
 
 /**

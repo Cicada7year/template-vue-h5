@@ -1,9 +1,6 @@
 /*
  * @Description: 校验数据
- * @Date: 2020-06-02 18:05:28
  * @Autor: Popper_Li
- * @LastEditors: Popper_Li
- * @LastEditTime: 2020-06-04 16:38:53
  */
 export const regular = {
   // 中国手机号

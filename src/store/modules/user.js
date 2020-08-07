@@ -1,9 +1,6 @@
 /*
  * @Description: 用户相关
- * @Date: 2020-06-08 11:05:38
  * @Autor: Popper_Li
- * @LastEditors: Popper_Li
- * @LastEditTime: 2020-06-08 11:45:39
  */
 
 // 模拟login请求

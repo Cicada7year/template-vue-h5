@@ -1,9 +1,6 @@
 /*
  * @Description: 格式化/处理各种数据
- * @Date: 2020-06-02 18:00:20
  * @Autor: Popper_Li
- * @LastEditors: Popper_Li
- * @LastEditTime: 2020-06-03 13:51:39
  */
 import Env from '@Env'
 

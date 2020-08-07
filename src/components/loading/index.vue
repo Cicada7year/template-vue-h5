@@ -29,7 +29,7 @@
 import { px2Rem } from "@u/format";
 import scss from "@/assets/scss/index.scss";
 export default {
-  name: "Loading",
+  name: "LiLoading",
   props: {
     // loading类型，可选值为 circular | loop
     type: {

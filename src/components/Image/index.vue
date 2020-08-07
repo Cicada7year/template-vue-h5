@@ -15,6 +15,7 @@ const loadImage = url => {
   });
 };
 export default {
+  name: "LiImg",
   props: {
     // 图片链接，必填
     src: {

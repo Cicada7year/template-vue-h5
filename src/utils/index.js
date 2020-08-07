@@ -1,9 +1,6 @@
 /*
  * @Description: utils总入口
- * @Date: 2020-06-02 18:17:04
  * @Autor: Popper_Li
- * @LastEditors: Popper_Li
- * @LastEditTime: 2020-06-04 18:04:18
  */
 import * as data from './data'
 import * as debug from './debug'

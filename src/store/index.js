@@ -1,9 +1,6 @@
 /*
  * @Description: vuex入口
- * @Date: 2020-06-01 14:39:38
  * @Autor: Popper_Li
- * @LastEditors: Popper_Li
- * @LastEditTime: 2020-06-08 11:05:28
  */
 import Vue from 'vue'
 import Vuex from 'vuex'

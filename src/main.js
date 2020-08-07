@@ -1,18 +1,23 @@
 /*
- * @Description: 
- * @Date: 2020-06-01 14:39:38
+ * @Description: 总入口
  * @Autor: Popper_Li
- * @LastEditors: Popper_Li
- * @LastEditTime: 2020-06-08 11:56:34
  */
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import 'lib-flexible'
+import Env from '@Env'
+import Directives from '@/directives'
+import Components from '@c'
 import '@/assets/scss/common/_reset.scss'
-import Env from '../env'
+import 'lib-flexible'
+
 Vue.config.productionTip = false
+
+// 自动注册组件
+Vue.use(Components)
+// 自动注册指令
+Vue.use(Directives)
 
 /* eslint-disable no-new */
 if (Env.openVconsole) {

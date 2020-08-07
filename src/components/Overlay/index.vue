@@ -9,7 +9,7 @@
 <script>
 import { throttle } from "@u/tool";
 export default {
-  name: "Overlay",
+  name: "LiOverlay",
   props: {
     show: {
       type: Boolean

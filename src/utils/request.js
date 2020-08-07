@@ -1,9 +1,6 @@
 /*
  * @Description: 请求配置
- * @Date: 2020-06-04 17:35:40
  * @Autor: Popper_Li
- * @LastEditors: Popper_Li
- * @LastEditTime: 2020-06-08 10:49:45
  */
 import axios from 'axios'
 import Env from '@Env'
