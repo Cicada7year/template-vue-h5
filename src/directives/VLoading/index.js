@@ -12,7 +12,6 @@ const handelLoading = (el, binding) => {
       el.appendChild(el.__$loading)
     })
   } else {
-    el.classList.remove('v-loading__parent')
     el.__loading.show = false
   }
 }
@@ -26,6 +25,7 @@ export default {
         // el.style.position = 'relative'
         // 生成loading的实例和dom
         const entity = new Entity({ el: document.createElement('div') })
+        console.log('entity', entity);
         // 把loading的vue实例挂到dom对象上
         el.__loading = entity
         // 把loading的实例挂到dom对象上

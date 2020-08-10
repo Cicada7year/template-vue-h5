@@ -18,7 +18,7 @@
  * }
  */
 const PAGES = {
-  Home: { path: '/', meta: { title: '首页', keepAlive: true }, setting: {} }
+  Home: { path: '/', meta: { title: '首页', keepAlive: false }, setting: {} }
 }
 
 export const pagesSetting = {}

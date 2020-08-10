@@ -50,19 +50,22 @@ export const loading = (path, errorCallBack) => {
           waitSetObj = waitSetObj[element]
         }
       }
-      /**
-       * 因为没有封装UI框架，封装后这里自行写loading开始
-       */
-      setKey ? waitSetObj[setKey] = true : log('开始loading====封装loading效果后删除log');
-      try {
-        await fn.apply(this, ...arguments)
-      } catch (error) {
-        errorCallBack ? errorCallBack.call(this, error) : _error(error)
-      } finally {
+      // 如果loading不存在的时候再调用
+      if (!waitSetObj[setKey]) {
         /**
-         * 这里关闭loading
+         * 因为没有封装UI框架，封装后这里自行写loading开始
          */
-        setKey ? waitSetObj[setKey] = false : log('结束loading====封装loading效果后删除log');
+        setKey ? waitSetObj[setKey] = true : log('开始loading====封装loading效果后删除log');
+        try {
+          await fn.apply(this, ...arguments)
+        } catch (error) {
+          errorCallBack ? errorCallBack.call(this, error) : _error(error)
+        } finally {
+          /**
+           * 这里关闭loading
+           */
+          setKey ? waitSetObj[setKey] = false : log('结束loading====封装loading效果后删除log');
+        }
       }
     }
   }

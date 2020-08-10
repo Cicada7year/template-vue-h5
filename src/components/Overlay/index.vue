@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { throttle } from "@u/tool";
+import { throttle } from "@u/decorator";
 export default {
   name: "LiOverlay",
   props: {
@@ -34,13 +34,10 @@ export default {
     }
   },
   methods: {
-    _click: throttle(
-      function() {
-        this.$emit("click", ...arguments);
-      },
-      300,
-      true
-    ),
+    @throttle(300, true)
+    _click() {
+      this.$emit("click", ...arguments);
+    },
     _touch(e) {
       if (this.lockScroll) {
         e.preventDefault();

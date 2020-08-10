@@ -1,3 +1,4 @@
+@import "../vars/index";
 
 * {
     -webkit-box-sizing: border-box;
@@ -18,7 +19,7 @@
       background: #fff;
       color: #555;
       font-size: 28px;
-      font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+      font-family: $base-font-family;
   }
   td, th, caption {
       font-size: 28px;
@@ -46,7 +47,7 @@
       list-style: none;
   }
   input, textarea, select, button {
-      font: 28px "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+      font: 28px $base-font-family;
   }
   table {
       border-collapse: collapse;

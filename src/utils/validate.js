@@ -42,3 +42,9 @@ export const testIdCard = idCard => regular.idCard.test(idCard)
  * @param {Number} code 
  */
 export const testCode = code => regular.code.test(code)
+
+/**
+ * 是否为Promise函数
+ * @param {Function} fn 待检测函数
+ */
+export const testPromise = fn => typeof fn.then === 'function' && fn instanceof Primise

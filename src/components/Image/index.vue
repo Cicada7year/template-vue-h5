@@ -1,5 +1,5 @@
 <template>
-  <div class="li-image" :style="style">
+  <div class="li-image" :style="style" @click="_click">
     <img class="li-image_img" :src="url" :style="{ objectFit }" />
   </div>
 </template>
@@ -116,6 +116,11 @@ export default {
       this.load = true;
     } catch (error) {
       this.$emit("error", this.url);
+    }
+  },
+  methods: {
+    _click() {
+      this.$emit("click", ...arguments);
     }
   }
 };
