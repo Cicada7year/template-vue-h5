@@ -1,0 +1,133 @@
+@charset 'UTF-8';
+// Color Palette
+$white:#fff !default;
+$black:#000 !default;
+$gray1: #f7f8fa !default;
+$gray2: #f2f3f5 !default;
+$gray3: #ebedf0 !default;
+$gray4: #dcdee0 !default;
+$gray5: #c8c9cc !default;
+$gray6: #969799 !default;
+$gray7: #646566 !default;
+$gray8: #323233 !default;
+$green: #07c160 !default;
+$blue: #1989fa !default;
+$red: #ee0a24 !default;
+$orange: #ff976a !default;
+$orange-dark: #ed6a0c !default;
+$orange-light: #fffbe8 !default;
+$success:$green !default;
+$fail:$red !default;
+// 主题色
+$primary:$blue;
+// Gradient Colors
+$gradient-red: linear-gradient(to right, #ff6034, #ee0a24) !default;
+$gradient-orange: linear-gradient(to right, #ffd01e, #ff8917) !default;
+
+// Component Colors
+$text-color: $gray8 !default;
+$active-color: $gray2 !default;
+$active-opacity: 0.7 !default;
+$disabled-opacity: 0.5 !default;
+$background-color: $gray1 !default;
+$background-color-light: #fafafa !default;
+$text-link-color: #576b95 !default;
+
+// Padding
+$padding-base: 8px !default;
+$padding-xs: $padding-base * 2 !default;
+$padding-sm: $padding-base * 3 !default;
+$padding-md: $padding-base * 4 !default;
+$padding-lg: $padding-base * 6 !default;
+$padding-xl: $padding-base * 8 !default;
+
+// Font
+$font-size-xs: 20px !default;
+$font-size-sm: 24px !default;
+$font-size-md: 28px !default;
+$font-size-lg: 32px !default;
+$font-weight-bold: 500 !default;
+$base-font-family: -apple-system,
+BlinkMacSystemFont,
+'Helvetica Neue',
+Helvetica,
+Segoe UI,
+Arial,
+Roboto,
+'PingFang SC',
+'Hiragino Sans GB',
+'Microsoft Yahei',
+sans-serif !default;
+$price-integer-font-family: Avenir-Heavy,
+PingFang SC,
+Helvetica Neue,
+Arial,
+sans-serif !default;
+
+// Animation
+$animation-duration-base: 0.3s !default;
+$animation-duration-fast: 0.2s !default;
+$animation-timing-function-enter: ease-out !default;
+$animation-timing-function-leave: ease-in !default;
+$animation-img-opacity: 1.5s !default;
+
+// Border
+$border-color: $gray3 !default;
+$border-width-base: 2px !default;
+$border-radius-sm: 4px !default;
+$border-radius-md: 8px !default;
+$border-radius-lg: 16px !default;
+$border-radius-max: 999px !default;
+
+/* 以下是组件变量 */
+
+// Button
+$--button-mini-height: 48px !default;
+$--button-mini-font-size: $font-size-xs !default;
+$--button-small-height: 64px !default;
+$--button-small-font-size: $font-size-sm !default;
+$--button-normal-font-size: $font-size-md !default;
+$--button-large-height: 100px !default;
+$--button-default-height: 88px !default;
+$--button-default-line-height: 1.2 !default;
+$--button-default-font-size: $font-size-md !default;
+$--button-default-color: $text-color !default;
+$--button-default-backgroud-color: $white !default;
+$--button-default-border-color: $border-color;
+$--button-primary-color: $white !default;
+$--button-primary-backgroud-color: $primary !default;
+$--button-primary-border-color: $primary !default;
+$--button-info-color: $white;
+$--button-info-background-color: $blue;
+$--button-info-border-color: $blue;
+$--button-danger-color: $white;
+$--button-danger-background-color: $red;
+$--button-danger-border-color: $red;
+$--button-warning-color: $white;
+$--button-warning-background-color: $orange;
+$--button-warning-border-color: $orange;
+$--button-border-width: $border-width-base;
+$--button-border-radius: $border-radius-sm;
+$--button-round-border-radius: $border-radius-max;
+$--button-plain-background-color: $white;
+$--button-disabled-opacity: $disabled-opacity;
+
+// 导出颜色变量
+:export {
+  color_white: $white;
+  color_black: $black;
+  color_gray1: $gray1;
+  color_gray2: $gray2;
+  color_gray3: $gray3;
+  color_gray4: $gray4;
+  color_gray5: $gray5;
+  color_gray6: $gray6;
+  color_gray7: $gray7;
+  color_gray8: $gray8;
+  color_red: $red;
+  color_orange: $orange;
+  color_orange-dark: $orange-dark;
+  color_orange-light: $orange-light;
+  color_success: $green;
+  color_fail: $red;
+}
