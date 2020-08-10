@@ -2,8 +2,8 @@
   <div class="home">
     <LiImg class="pic" :src="imgUrl"></LiImg>
     <p class="title">导出的scss变量：</p>
-    <ul class="colors" v-loading="dataForm.show">
-      <li class="colors-item" v-for="item in colors" :key="item.name">
+    <ul v-loading="dataForm.show" class="colors">
+      <li v-for="item in colors" :key="item.name" class="colors-item">
         <div class="color" :style="{ backgroundColor: item.value }"></div>
         <span>{{ item.name }}</span>
       </li>
@@ -46,7 +46,7 @@ export default {
     @throttle(3000, true)
     @loading("dataForm.show")
     async _click() {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         // 节流控制按钮每3000毫秒才能触发一次，然后loading三秒后关闭
         setTimeout(() => {
           resolve();

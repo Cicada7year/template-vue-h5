@@ -38,12 +38,14 @@ module.exports = {
     'eol-last': 0,                                // 文件以单一的换行符结束
     'no-console': 0,                              // 禁止使用console
     'no-debugger': 0,                             // 禁止使用debugger
-    'no-unused-vars': 1,                          // 没有使用的变量警告
+    'no-unused-vars': 0,                          // 没有使用的变量警告
     'no-trailing-spaces': 0,                      // 一行最后不允许有空格
     'vue/no-unused-components': 1,                // 没有使用的组件警告
     'vue/no-unused-vars': 1,                      // 没有使用的变量警告
     'vue/max-attributes-per-line': 0,             // html一行最多有几个属性
     'vue/html-self-closing': 0,                    // html标签关闭方式
+    'vue/require-default-prop': 0,
+    'vue/singleline-html-element-content-newline': 0,
     'space-before-function-paren': 0,             // 函数定义时括号前面要不要有空格
   }
 }

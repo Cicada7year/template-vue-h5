@@ -187,7 +187,7 @@ export const parseUrl2Param = (str) => {
   if (!str) return {}
   const arr = str.replace(/\?/g, '').split('&')
   const param = {}
-  arr.forEach((item, index) => {
+  arr.forEach((item) => {
     const s = item.split('=')
     param[s[0]] = s[1]
   })
