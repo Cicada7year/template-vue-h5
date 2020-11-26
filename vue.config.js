@@ -68,23 +68,6 @@ module.exports = {
       .set('@const', resove('src/constant'))
       .set('@u', resove('src/utils'))
       .set('@Env', resove('env'))
-    /**
-     * px2rem设置
-     */
-    if (env.remUnit) {
-      config.module
-        .rule('scss')
-        .oneOf('vue')
-        .use('px2rem-loader')
-        .loader('px2rem-loader')
-        .before('postcss-loader')
-        .options({
-          remUnit: env.remUnit / 10,
-          // 转rem后保留几位小数
-          remPrecision: 8
-        })
-        .end()
-    }
 
     /**
      * 全局scss变量

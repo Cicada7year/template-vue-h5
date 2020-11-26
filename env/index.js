@@ -14,7 +14,7 @@ const global = {
   // 项目版本号
   version,
   // px2Rem画稿配置，单位为画稿宽度
-  remUnit: 750,
+  remUnit: 375,
   NODE_ENV: nodeEnv
 }
 

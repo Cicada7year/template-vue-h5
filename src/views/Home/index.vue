@@ -59,29 +59,29 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  font-size: 28px;
-  @include safe-padding-bottom(40px);
+  font-size: 14px;
+  @include safe-padding-bottom(20px);
   .pic {
     display: block;
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .title {
     color: $text-color;
-    line-height: 80px;
+    line-height: 40px;
   }
 
   .colors {
     background-color: $gray4;
-    padding: 20px;
+    padding: 10px;
     &-item {
       display: flex;
       align-items: center;
       .color {
-        width: 60px;
-        height: 60px;
-        margin-right: 40px;
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
       }
     }
   }
@@ -89,11 +89,11 @@ export default {
   .btn {
     text-align: center;
     color: $primary;
-    width: 680px;
-    margin: 40px auto 0;
-    padding: 20px 0;
+    width: 340px;
+    margin: 20px auto 0;
+    padding: 10px 0;
     border: 1px solid $primary;
-    border-radius: 16px;
+    border-radius: 8px;
   }
 }
 </style>
