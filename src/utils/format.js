@@ -151,7 +151,7 @@ export const addTime = (time, num) => {
  * @param {Number} decimal 小数位，默认保留后两位
  * @param {Boolean} thousands 是否开启千分位
  */
-export const formatProce = (num, decimal = 2, thousands = true) => {
+export const formatPrice = (num, decimal = 2, thousands = true) => {
   let price = Number(num).toFixed(decimal)
   if (thousands) price = price.replace(/(\d)(?=(\d{3})+\.)/g, '$1,')
   return price

@@ -17,14 +17,14 @@ export const debounce = (f, wait = 100, firstRun = false) => {
   return function () {
     clearTimeout(timer)
     if (firstRun && flag) {
-      f.apply(this, ...arguments)
+      f.apply(this, arguments)
       flag = false
     }
     timer = setTimeout(() => {
       if (firstRun) {
         flag = true
       } else {
-        f.apply(this, ...arguments)
+        f.apply(this, arguments)
       }
     }, wait);
   }
@@ -42,14 +42,14 @@ export const throttle = (f, wait = 100, firstRun = false) => {
   return function () {
     if (timer) return
     if (firstRun && flag) {
-      f.apply(this, ...arguments)
+      f.apply(this, arguments)
       flag = false
     }
     timer = setTimeout(() => {
       if (firstRun) {
         flag = true
       } else {
-        f.apply(this, ...arguments)
+        f.apply(this, arguments)
       }
       timer = null
     }, wait);
