@@ -85,8 +85,8 @@ export default {
   align-items: center;
   .icon,
   .icon_circular {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     animation: li-rotate 1s linear infinite;
   }
 
@@ -101,7 +101,7 @@ export default {
   }
 
   .text {
-    margin-left: 16px;
+    margin-left: 8px;
   }
 }
 

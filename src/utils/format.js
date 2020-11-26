@@ -199,5 +199,5 @@ export const parseUrl2Param = (str) => {
  * @param {Number} num 需要转换的单位
  */
 export const px2Rem = (num = 0) => {
-  return `${num / Env.remUnit * 10}rem`
+  return `${num / Env.remUnit / 10}rem`
 }

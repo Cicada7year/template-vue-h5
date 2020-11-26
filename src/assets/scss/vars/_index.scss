@@ -34,7 +34,7 @@ $background-color-light: #fafafa !default;
 $text-link-color: #576b95 !default;
 
 // Padding
-$padding-base: 8px !default;
+$padding-base: 4px !default;
 $padding-xs: $padding-base * 2 !default;
 $padding-sm: $padding-base * 3 !default;
 $padding-md: $padding-base * 4 !default;
@@ -42,10 +42,10 @@ $padding-lg: $padding-base * 6 !default;
 $padding-xl: $padding-base * 8 !default;
 
 // Font
-$font-size-xs: 20px !default;
-$font-size-sm: 24px !default;
-$font-size-md: 28px !default;
-$font-size-lg: 32px !default;
+$font-size-xs: 10px !default;
+$font-size-sm: 12px !default;
+$font-size-md: 14px !default;
+$font-size-lg: 16px !default;
 $font-weight-bold: 500 !default;
 $base-font-family: -apple-system,
 BlinkMacSystemFont,
@@ -73,22 +73,22 @@ $animation-img-opacity: 1.5s !default;
 
 // Border
 $border-color: $gray3 !default;
-$border-width-base: 2px !default;
-$border-radius-sm: 4px !default;
-$border-radius-md: 8px !default;
-$border-radius-lg: 16px !default;
+$border-width-base: 1px !default;
+$border-radius-sm: 2px !default;
+$border-radius-md: 4px !default;
+$border-radius-lg: 8px !default;
 $border-radius-max: 999px !default;
 
 /* 以下是组件变量 */
 
 // Button
-$--button-mini-height: 48px !default;
+$--button-mini-height: 24px !default;
 $--button-mini-font-size: $font-size-xs !default;
-$--button-small-height: 64px !default;
+$--button-small-height: 32px !default;
 $--button-small-font-size: $font-size-sm !default;
 $--button-normal-font-size: $font-size-md !default;
-$--button-large-height: 100px !default;
-$--button-default-height: 88px !default;
+$--button-large-height: 50px !default;
+$--button-default-height: 44px !default;
 $--button-default-line-height: 1.2 !default;
 $--button-default-font-size: $font-size-md !default;
 $--button-default-color: $text-color !default;

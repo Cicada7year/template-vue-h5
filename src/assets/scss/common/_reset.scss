@@ -18,11 +18,11 @@
   body {
       background: #fff;
       color: #555;
-      font-size: 28px;
+      font-size: 14px;
       font-family: $base-font-family;
   }
   td, th, caption {
-      font-size: 28px;
+      font-size: 14px;
   }
   h1, h2, h3, h4, h5, h6 {
       font-weight: normal;
@@ -47,7 +47,7 @@
       list-style: none;
   }
   input, textarea, select, button {
-      font: 28px $base-font-family;
+      font: 14px $base-font-family;
   }
   table {
       border-collapse: collapse;
